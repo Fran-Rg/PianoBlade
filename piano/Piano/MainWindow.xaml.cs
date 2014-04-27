@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using Sharparam.SharpBlade;
-using Sharparam.SharpBlade.Native;
-using Sharparam.SharpBlade.Razer;
-using Sharparam.SharpBlade.Razer.Events;
+using SharpBlade;
+using SharpBlade.Native;
+using SharpBlade.Razer;
+using SharpBlade.Razer.Events;
 using Sharparam.Lib;
 using System.Collections.Generic;
 using System.Windows.Shapes;
@@ -64,7 +64,7 @@ namespace SharpBlade.Piano
             _razer.Touchpad.Gesture += TouchpadOnGesture;
             //_razer.Touchpad.EnableGesture(RazerAPI.GestureType.Press);
             _razer.Touchpad.EnableGesture(RazerAPI.GestureType.Move);
-            //_razer.Touchpad.EnableGesture(RazerAPI.GestureType.Tap);
+            _razer.Touchpad.EnableGesture(RazerAPI.GestureType.Tap);
             //_overlayHelper.Show("Ready to touch");
 
         }

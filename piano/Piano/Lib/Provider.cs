@@ -32,9 +32,9 @@ namespace Sharparam.Lib
 {
     using System.Windows;
 
-    using Sharparam.SharpBlade.Native;
-    using Sharparam.SharpBlade.Razer;
-    using Sharparam.SharpBlade.Razer.Events;
+    using SharpBlade.Native;
+    using SharpBlade.Razer;
+    using SharpBlade.Razer.Events;
 
     public static class Provider
     {
@@ -48,7 +48,7 @@ namespace Sharparam.Lib
                 {
                    // _razer = RazerManager.Instance;
                     //Create SharpBlade RazerManager object
-                    _razer = new RazerManager();
+                    _razer = RazerManager.Instance;
                    // _razer.BlankTouchpadImagePath = @"Default\Images\tp_blank.png";
                    // _razer.DisabledDynamicKeyImagePath = @"Default\Images\dk_disabled.png";
 
