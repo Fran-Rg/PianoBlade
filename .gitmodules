@@ -1,0 +1,6 @@
+[submodule "SharpBlade"]
+	path = SharpBlade
+	url = https://github.com/Sharparam/SharpBlade.git
+[submodule "piano/SharpBlade"]
+	path = piano/SharpBlade
+	url = https://github.com/Sharparam/SharpBlade.git

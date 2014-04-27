@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piano", "Piano\Piano.csproj
 		{2C390908-D634-4450-9804-71D4929DD392} = {2C390908-D634-4450-9804-71D4929DD392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpBlade", "Sharparam.SharpBlade\SharpBlade\SharpBlade.csproj", "{2C390908-D634-4450-9804-71D4929DD392}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpBlade", "SharpBlade\SharpBlade\SharpBlade.csproj", "{2C390908-D634-4450-9804-71D4929DD392}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
