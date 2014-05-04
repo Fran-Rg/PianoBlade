@@ -47,6 +47,7 @@ namespace SharpBlade.Piano
             {
                 _outputDevice = OutputDevice.InstalledDevices[0];
                 _outputDevice.Open();
+                _outputDevice.SendProgramChange(Channel.Channel1, Instrument.AcousticGrandPiano);
             }
             else
                 Application.Current.Shutdown();
@@ -60,7 +61,11 @@ namespace SharpBlade.Piano
              */
             _razer.Touchpad.SetWindow(this, Touchpad.RenderMethod.Polling);
 
-            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK1, OnPlusPress, @"Default\Images\PlusDK.png");
+            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK1, OnPressPiano, @"Default\Images\Piano.png");
+            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK2, OnPressGuitar, @"Default\Images\Guitar.png");
+            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK3, OnPressEPiano, @"Default\Images\EPiano.png");
+            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK4, OnPressXylophone, @"Default\Images\Xylo.png");
+            _razer.EnableDynamicKey(RazerAPI.DynamicKeyType.DK5, OnPressSteelDrums, @"Default\Images\Drums.png");
             _razer.Touchpad.Gesture += TouchpadOnGesture;
             //_razer.Touchpad.EnableGesture(RazerAPI.GestureType.Press);
             _razer.Touchpad.EnableGesture(RazerAPI.GestureType.Move);
@@ -69,9 +74,25 @@ namespace SharpBlade.Piano
 
         }
 
-        private void OnPlusPress(object sender, System.EventArgs e)
+        private void OnPressPiano(object sender, System.EventArgs e)
         {
-            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.Banjo);
+            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.AcousticGrandPiano);
+        }
+        private void OnPressGuitar(object sender, System.EventArgs e)
+        {
+            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.AcousticGuitarSteel);
+        }
+        private void OnPressEPiano(object sender, System.EventArgs e)
+        {
+            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.ElectricPiano1);
+        }
+        private void OnPressXylophone(object sender, System.EventArgs e)
+        {
+            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.Xylophone);
+        }
+        private void OnPressSteelDrums(object sender, System.EventArgs e)
+        {
+            _outputDevice.SendProgramChange(Channel.Channel1, Instrument.SteelDrums);
         }
 
         private void TouchpadOnGesture(object sender, GestureEventArgs gestureEventArgs)
@@ -79,7 +100,7 @@ namespace SharpBlade.Piano
             var xPos = gestureEventArgs.X;
             var yPos = gestureEventArgs.Y;
             var pos = new Point(xPos, yPos);
-            string sposition = "[" + xPos + "," + yPos + "]:Type" + gestureEventArgs.GestureType.ToString();
+            //string sposition = "[" + xPos + "," + yPos + "]:Type" + gestureEventArgs.GestureType.ToString();
             //_overlayHelper.Show(sposition,1000);
            
 
